@@ -68,7 +68,7 @@ public class homework_3_new {
         }
         System.out.println("Максимальное число в массиве: " + counter);
     }
-    public static boolean checkBalance() {
+    public static boolean checkBalance() { //7
         int[] massive = {1, 2, 3, 4, 4, 3, 2, 1};
         int sum1 = 0, sum2 = 0;
         for (int i = 0; i < massive.length; i++) {

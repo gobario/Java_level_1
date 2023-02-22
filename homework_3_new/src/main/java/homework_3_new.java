@@ -2,11 +2,13 @@ import java.util.Arrays;
 
 public class homework_3_new {
     public static void main(String[] args) {
-        changeMassive();
-        fillingMassive();
-        multiplicationMassive();
-        diagonalMassive();
-        System.out.println(Arrays.toString(intvalue(5, 3)));
+        changeMassive(); //задание 1
+        fillingMassive(); //задание 2
+        multiplicationMassive(); // задание 3
+        diagonalMassive(); // задание 4
+        System.out.println(Arrays.toString(intvalue(5, 3))); // задание 5
+        minmaxElements(); // задание 6
+        System.out.println(checkBalance()); // задание 7
     }
     public static void changeMassive() {
         int[] massive = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
@@ -54,6 +56,32 @@ public class homework_3_new {
         }
         return massive;
     }
-
+    public static void minmaxElements() {
+        int[] massive = {2, 1, 3, 4, 6, 5};
+        int counter = massive[0];
+        for (int i = 0; i < massive.length; i++) {
+            if (massive[i] < counter) counter = massive[i];
+        }
+        System.out.println("Минимальное число в массиве: " + counter);
+        for (int i = 0; i < massive.length; i++) {
+            if (massive[i] > counter) counter = massive[i];
+        }
+        System.out.println("Максимальное число в массиве: " + counter);
+    }
+    public static boolean checkBalance() {
+        int[] massive = {1, 2, 3, 4, 4, 3, 2, 1};
+        int sum1 = 0, sum2 = 0;
+        for (int i = 0; i < massive.length; i++) {
+            sum1 = sum2 = 0;
+            for (int j = 0; j < i; j++) {
+                sum1 += massive[j];
+            }
+            for (int j = i; j < massive.length; j++) {
+                sum2 += massive[j];
+            }
+            if (sum1 == sum2) return true;
+        }
+        return false;
+    }
 }
 

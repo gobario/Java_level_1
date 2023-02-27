@@ -82,16 +82,29 @@ public class homework4 {
         System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
         map[y][x] = DOT_0;
     }
+//    public static boolean checkWin(char symb) {
+//        if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb) return true;
+//        if (map[1][0] == symb && map[1][1] == symb && map[1][2] == symb) return true;
+//        if (map[2][0] == symb && map[2][1] == symb && map[2][2] == symb) return true;
+//        if (map[0][0] == symb && map[1][0] == symb && map[2][0] == symb) return true;
+//        if (map[0][1] == symb && map[1][1] == symb && map[2][1] == symb) return true;
+//        if (map[0][2] == symb && map[1][2] == symb && map[2][2] == symb) return true;
+//        if (map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) return true;
+//        if (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb) return true;
+//        return false;
+//    }
     public static boolean checkWin(char symb) {
-        if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb) return true;
-        if (map[1][0] == symb && map[1][1] == symb && map[1][2] == symb) return true;
-        if (map[2][0] == symb && map[2][1] == symb && map[2][2] == symb) return true;
-        if (map[0][0] == symb && map[1][0] == symb && map[2][0] == symb) return true;
-        if (map[0][1] == symb && map[1][1] == symb && map[2][1] == symb) return true;
-        if (map[0][2] == symb && map[1][2] == symb && map[2][2] == symb) return true;
-        if (map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) return true;
-        if (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb) return true;
-        return false;
+        boolean result = false;
+        for (int i = 0; i < SIZE; i++) {
+            result = true;
+            for ( int j = 0; j < SIZE; j++) {
+                result = result && (map[i][j] == symb);
+            }
+            if (result == true) {
+                return result;
+            }
+        }
+        return result;
     }
     public static boolean isMapFull() {
         for (int i = 0; i < SIZE; i++) {

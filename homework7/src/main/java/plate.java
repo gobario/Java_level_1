@@ -1,5 +1,5 @@
 public class plate {
-    private int food;
+    public int food;
     public plate(int food) {
         this.food = food;
     }

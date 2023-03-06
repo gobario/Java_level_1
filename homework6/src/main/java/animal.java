@@ -1,14 +1,21 @@
 public class animal {
-    public int length;
+
     public String name;
-    public animal(String name, int length) {
+    public int maxLengthRun = 0;
+    public int masLengthSwim = 0;
+    public animal(String name) {
         this.name = name;
-        this.length = length;
     }
-    public void animalRun() {
-        System.out.println(name + " пробежал " + length + " метров.");
+    public void animalRun(int length) {
+        if (length > maxLengthRun){
+            System.out.println("NO");
+        }
+        else System.out.println(name + " пробежал " + length + " метров.");
     }
-    public void animalSwim() {
+    public void animalSwim(int length) {
+        if (length > masLengthSwim){
+            System.out.println("NO");
+        }
         System.out.println(name + " проплыл " + length + " метров.");
     }
 }

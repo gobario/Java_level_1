@@ -1,5 +1,7 @@
 public class dog extends animal {
-    public dog(String name, int length) {
-        super(name, length);
+    public dog(String name) {
+        super(name);
+        super.maxLengthRun = 500;
+        super.masLengthSwim = 10;
     }
 }
